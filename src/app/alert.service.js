@@ -17,6 +17,7 @@ export class AlertService {
   }
 
   hideErrors() {
+    console.log("hehe");
     this.errorBox.classList.add("invisible");
   }
 }
