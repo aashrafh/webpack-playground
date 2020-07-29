@@ -1,0 +1,25 @@
+{
+  "name": "webpack-playground",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "My playground for learning Webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aashrafh/webpack-playground.git"
+  },
+  "keywords": [],
+  "author": "Ahmed Ashraf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aashrafh/webpack-playground/issues"
+  },
+  "homepage": "https://github.com/aashrafh/webpack-playground#readme",
+  "devDependencies": {
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
