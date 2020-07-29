@@ -1,6 +1,5 @@
-const alertService = new AlertService();
-const componentService = new ComponentService();
-const run = (alertService, componentService) => {
+import { inputsAreValid } from "./utils/inputs-are-valid";
+export const run = (alertService, componentService) => {
   alertService.hideErrors();
   const inputs = componentService.getInputs();
   const parsedInputs = parseInputs(...inputs);
@@ -12,4 +11,3 @@ const run = (alertService, componentService) => {
     alertService.handlAdditionError(inputs, parsedInputs);
   }
 };
-run(alertService, componentService);
