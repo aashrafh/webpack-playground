@@ -3,7 +3,7 @@ export class AlertService {
   constructor() {
     this.errorBox = document.getElementById("error");
   }
-  handlAdditionError(inputs, numbers) {
+  handleAdditionError(inputs, numbers) {
     const message = inputs.reduce((msg, str, idx) => {
       if (inputsAreValid(numbers[idx])) {
         return msg + "";
