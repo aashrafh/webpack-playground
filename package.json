@@ -6,7 +6,9 @@
   "author": "Ahmed Ashraf <ahmed.ashraf.cmp@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "dev": "webpack-dev-server --config webpack.config.development.js",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.production.js"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -24,10 +26,17 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@hot-loader/react-dom": "^16.13.0",
+    "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^4.2.0",
+    "cssnano": "^4.1.10",
     "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
     "react-hot-loader": "^4.12.21",
+    "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
