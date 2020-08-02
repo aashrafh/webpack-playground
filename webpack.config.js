@@ -5,7 +5,28 @@ const port = process.env.PORT || 3000;
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: {
+    app: "./src/index.js",
+    vendor: ["semantic-ui-react"]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          test: "/.css$/",
+          chunks: "all",
+          enforce: true
+        },
+        vendor: {
+          chunks: "initial",
+          test: "vendor",
+          name: "vendor",
+          enforce: true
+        }
+      }
+    }
+  },
   output: {
     filename: "[name].[hash].bundle.js",
     publicPath: "/"
