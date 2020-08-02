@@ -7,7 +7,13 @@ module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "index.[hash].bundle.js"
+    filename: "[name].[hash].bundle.js",
+    publicPath: "/"
+  },
+  resolve: {
+    alias: {
+      "react-dom": "@hot-loader/react-dom"
+    }
   },
   devtool: "inline-source-map",
   module: {
@@ -26,8 +32,10 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: true,
-              localsConvention: "camelCase",
+              esModule: true,
+              modules: {
+                namedExport: true
+              },
               sourceMap: true
             }
           }
@@ -36,6 +44,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "public/index.html",
       favicon: "public/favicon.ico"
@@ -45,6 +54,7 @@ module.exports = {
     host: "localhost",
     port: port,
     historyApiFallback: true,
-    open: true
+    open: true,
+    hot: true
   }
 };
